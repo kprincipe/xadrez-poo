@@ -6,6 +6,8 @@ import br.com.afsj.model.TradutorEspanhol;
 
 public class Xadrez {
 	
+	// TESTE PARA IMPLEMENTAÇÃO
+	
 	public static final int corPRETA = 0;
 	public static final int corBRANCA = 1;
 	public static final int tamanhoQuadrado = 45;
