@@ -7,6 +7,7 @@ import br.com.afsj.view.ICavalo;
 import br.com.afsj.view.IPeao;
 import br.com.afsj.view.IPeca;
 import br.com.afsj.view.ITabuleiro;
+import br.com.afsj.view.ITorre;
 
 public class Tabuleiro {
 
@@ -36,12 +37,21 @@ public class Tabuleiro {
 	protected static Cavalo cavaloBranco1 = new Cavalo();
 	protected static ICavalo iCavaloBranco1 = new ICavalo(cavaloBranco1);
 	
+	protected static Torre torreBranca1 = new Torre();
+	protected static ITorre iTorreBranca1 = new ITorre(torreBranca1);
+	protected static Torre torreBranca2 = new Torre();
+	protected static ITorre iTorreBranca2 = new ITorre(torreBranca2);
+
+	protected static Torre torrePreta1 = new Torre();
+	protected static ITorre iTorrePreta1 = new ITorre(torrePreta1);
+	protected static Torre torrePreta2 = new Torre();
+	protected static ITorre iTorrePreta2 = new ITorre(torrePreta2);
 	//protected static Peca peca = new Peca();
 
 	public void iniciar(Tradutor t) {
 
 		TELA = new JFrame(t.traduzir("Xadrez"));
-
+		//TELA.setLayout(null);
 		// Brancas
 		peaoBranco1.setCor(Xadrez.corBRANCA);
 		peaoBranco1.mover(0, 6);
@@ -67,6 +77,22 @@ public class Tabuleiro {
 		TELA.getContentPane().add(iCavaloBranco1.getImagem());
 		listaBrancas.add(cavaloBranco1);
 		
+		torreBranca1.setCor(Xadrez.corBRANCA);
+		torreBranca1.mover(0, 7);
+		iTorreBranca1.setIconeBranco(new ImageIcon("imagens/Torre-Brancas-Branco.png"));
+		iTorreBranca1.setIconeMarrom(new ImageIcon("imagens/Torre-Brancas-Marrom.png"));
+		iTorreBranca1.mover(0, 7);
+		TELA.getContentPane().add(iTorreBranca1.getImagem());
+		listaBrancas.add(torreBranca1);
+		
+		torreBranca2.setCor(Xadrez.corBRANCA);
+		torreBranca2.mover(7, 7);
+		iTorreBranca2.setIconeBranco(new ImageIcon("imagens/Torre-Brancas-Branco.png"));
+		iTorreBranca2.setIconeMarrom(new ImageIcon("imagens/Torre-Brancas-Marrom.png"));
+		iTorreBranca2.mover(7, 7);
+		TELA.getContentPane().add(iTorreBranca2.getImagem());
+		listaBrancas.add(torreBranca2);
+		
 		// Pretas
 		peaoPreto1.setCor(Xadrez.corPRETA);
 		peaoPreto1.mover(0, 1);
@@ -84,10 +110,27 @@ public class Tabuleiro {
 		TELA.getContentPane().add(iCavaloPreto1.getImagem());
 		listaPretas.add(cavaloPreto1);
 		
+		torrePreta1.setCor(Xadrez.corPRETA);
+		torrePreta1.mover(0, 0);
+		iTorrePreta1.setIconeBranco(new ImageIcon("imagens/Torre-Pretas-Branco.png"));
+		iTorrePreta1.setIconeMarrom(new ImageIcon("imagens/Torre-Pretas-Marrom.png"));
+		iTorrePreta1.mover(0, 0);
+		TELA.getContentPane().add(iTorrePreta1.getImagem());
+		listaPretas.add(torrePreta1);
+		
+		torrePreta2.setCor(Xadrez.corPRETA);
+		torrePreta2.mover(7, 0);
+		iTorrePreta2.setIconeBranco(new ImageIcon("imagens/Torre-Pretas-Branco.png"));
+		iTorrePreta2.setIconeMarrom(new ImageIcon("imagens/Torre-Pretas-Marrom.png"));
+		iTorrePreta2.mover(7, 0);
+		TELA.getContentPane().add(iTorrePreta2.getImagem());
+		listaPretas.add(torrePreta2);
+	
 		TELA.getContentPane().add(iTabuleiro.getImagem());
 		TELA.setSize(400, 400);
 		TELA.setVisible(true);
 		TELA.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 	}
 
 	public static void avaliarEventoPeca(Peca p, IPeca ip) {
