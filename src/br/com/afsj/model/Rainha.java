@@ -46,6 +46,29 @@ public class Rainha extends Peca {
 			return true;
 		}
 		
+		// movimentos na diagonal ↖️↙️↘️↗️
+		for (int i = 0; i <= 7	; i++) {
+			// diagonal esquerda superior ↖ 
+			if (x == posX-i &&  y == posY-i) {
+				return true;
+			}
+					
+			// diagonal direita inferior ↘
+			if (x == posX+i && y == posY+i) {
+				return true;
+			}
+					
+			// diagona direita superior ️↗️
+			if (x == posX+i && y == posY-i) {
+				return true;	
+			} 
+					
+			// diagonal esquerda inferior ↙️
+			if (x == posX-i && y == posY+i) {
+				return true;	
+			} 
+						
+		}
 		
 		return false;
 	}

@@ -27,6 +27,9 @@ public class Tabuleiro {
 	
 	protected static Peao peaoBranco2 = new Peao();
 	protected static IPeao iPeaoBranco2 = new IPeao(peaoBranco2);
+	
+	protected static Peao peaoBranco3 = new Peao();
+	protected static IPeao iPeaoBranco3 = new IPeao(peaoBranco3);
 
 	protected static Peao peaoPreto1 = new Peao();
 	protected static IPeao iPeaoPreto1 = new IPeao(peaoPreto1);
@@ -62,6 +65,14 @@ public class Tabuleiro {
 		iPeaoBranco2.mover(1, 6);
 		TELA.getContentPane().add(iPeaoBranco2.getImagem());
 		listaBrancas.add(peaoBranco2);
+		
+		peaoBranco3.setCor(Xadrez.corBRANCA);
+		peaoBranco3.mover(2, 6);
+		iPeaoBranco3.setIconeBranco(new ImageIcon("imagens/Peao-Brancas-Branco.png"));
+		iPeaoBranco3.setIconeMarrom(new ImageIcon("imagens/Peao-Brancas-Marrom.png"));
+		iPeaoBranco3.mover(2, 6);
+		TELA.getContentPane().add(iPeaoBranco3.getImagem());
+		listaBrancas.add(peaoBranco3);
 
 		cavaloBranco1.setCor(Xadrez.corBRANCA);
 		cavaloBranco1.mover(1, 7);
