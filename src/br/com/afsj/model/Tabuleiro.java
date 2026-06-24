@@ -6,6 +6,7 @@ import br.com.afsj.control.Xadrez;
 import br.com.afsj.view.ICavalo;
 import br.com.afsj.view.IPeao;
 import br.com.afsj.view.IPeca;
+import br.com.afsj.view.IRainha;
 import br.com.afsj.view.ITabuleiro;
 
 public class Tabuleiro {
@@ -29,6 +30,9 @@ public class Tabuleiro {
 
 	protected static Peao peaoPreto1 = new Peao();
 	protected static IPeao iPeaoPreto1 = new IPeao(peaoPreto1);
+	
+	protected static Rainha rainhaPreta = new Rainha();
+	protected static IRainha iRainhaPreta = new IRainha(rainhaPreta);
 	
 	protected static Cavalo cavaloPreto1 = new Cavalo();
 	protected static ICavalo iCavaloPreto1 = new ICavalo(cavaloPreto1);
@@ -75,6 +79,14 @@ public class Tabuleiro {
 		iPeaoPreto1.mover(0, 1);
 		TELA.getContentPane().add(iPeaoPreto1.getImagem());
 		listaPretas.add(peaoPreto1);
+		
+		rainhaPreta.setCor(Xadrez.corPRETA);
+		rainhaPreta.mover(4, 2);
+		iRainhaPreta.setIconeBranco(new ImageIcon("imagens/Rainha-Pretas-Branco.png"));
+		iRainhaPreta.setIconeMarrom(new ImageIcon("imagens/Rainha-Pretas-Marrom.png"));
+		iRainhaPreta.mover(4, 2);
+		TELA.getContentPane().add(iRainhaPreta.getImagem());
+		listaPretas.add(rainhaPreta);
 
 		cavaloPreto1.setCor(Xadrez.corPRETA);
 		cavaloPreto1.mover(1, 0);

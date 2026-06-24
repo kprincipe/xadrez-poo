@@ -7,5 +7,4 @@ public class IPeao extends IPeca {
 	public IPeao(Peao np) {
 		super(np);
 	}
-
 }

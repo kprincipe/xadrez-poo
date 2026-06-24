@@ -3,13 +3,24 @@ package br.com.afsj.model;
 public class Rainha extends Peca {
 	@Override
 	public boolean movimentoOK(int x, int y) {
-		// TODO: implementar movimento da rainha
+		// se peça não estiver no tabuleiro, pode ser movida para qualquer posição
+		if (posX == -1 && posY == -1) {
+			return true;
+		}
+		
+		if (y == posY || x == posX) {
+			return true;
+		}
+		
 		return false;
 	}
 	
 	@Override
 	public boolean capturar(int x, int y) {
-		// TODO: implementar quando rainha pode capturar pecas
+		if (y == posY || x == posX) {
+			return true;
+		}
+		
 		return false;
 	}
 }
