@@ -37,6 +37,9 @@ public class Tabuleiro {
 	protected static Rainha rainhaPreta = new Rainha();
 	protected static IRainha iRainhaPreta = new IRainha(rainhaPreta);
 	
+	protected static Rainha rainhaBranca = new Rainha();
+	protected static IRainha iRainhaBranca = new IRainha(rainhaBranca);
+	
 	protected static Cavalo cavaloPreto1 = new Cavalo();
 	protected static ICavalo iCavaloPreto1 = new ICavalo(cavaloPreto1);
 
@@ -92,12 +95,20 @@ public class Tabuleiro {
 		listaPretas.add(peaoPreto1);
 		
 		rainhaPreta.setCor(Xadrez.corPRETA);
-		rainhaPreta.mover(4, 2);
+		rainhaPreta.mover(4, 0);
 		iRainhaPreta.setIconeBranco(new ImageIcon("imagens/Rainha-Pretas-Branco.png"));
 		iRainhaPreta.setIconeMarrom(new ImageIcon("imagens/Rainha-Pretas-Marrom.png"));
-		iRainhaPreta.mover(4, 2);
+		iRainhaPreta.mover(4, 0);
 		TELA.getContentPane().add(iRainhaPreta.getImagem());
 		listaPretas.add(rainhaPreta);
+		
+		rainhaBranca.setCor(Xadrez.corBRANCA);
+		rainhaBranca.mover(4, 7);
+		iRainhaBranca.setIconeBranco(new ImageIcon("imagens/Rainha-Brancas-Branco.png"));
+		iRainhaBranca.setIconeMarrom(new ImageIcon("imagens/Rainha-Brancas-Marrom.png"));
+		iRainhaBranca.mover(4, 7);
+		TELA.getContentPane().add(iRainhaBranca.getImagem());
+		listaBrancas.add(rainhaBranca);
 
 		cavaloPreto1.setCor(Xadrez.corPRETA);
 		cavaloPreto1.mover(1, 0);

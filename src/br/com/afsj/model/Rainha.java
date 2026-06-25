@@ -18,7 +18,8 @@ public class Rainha extends Peca {
 		for (int i = 0; i <= 7; i++) {
 			// diagonal esquerda superior ↖ 
 			if (x == posX-i &&  y == posY-i) {
-				if (Tabuleiro.listaBrancas.pecaPosicao(posX - i, posY - i) != null) {
+				if (Tabuleiro.listaBrancas.pecaPosicao(posX - i, posY - i) != null
+						|| Tabuleiro.listaPretas.pecaPosicao(posX - i, posY - i) != null) {
 					return false;
 				}
 				return true;
@@ -27,12 +28,14 @@ public class Rainha extends Peca {
 			// diagonal direita inferior ↘
 			if (x == posX+i && y == posY+i) {
 				for (int j = 0; j < distancia; ++j) {
-					if (Tabuleiro.listaBrancas.pecaPosicao(posX - i + j, posY + i - j) != null) {
+					if (Tabuleiro.listaBrancas.pecaPosicao(posX - i + j, posY + i - j) != null
+							|| Tabuleiro.listaPretas.pecaPosicao(posX - i + j, posY + i - j) != null) {
 						return false;
 					}
 				}
 				
-				if (Tabuleiro.listaBrancas.pecaPosicao(posX + i - 1, posY + i - 1) != null) {
+				if (Tabuleiro.listaBrancas.pecaPosicao(posX + i - 1, posY + i - 1) != null
+						|| Tabuleiro.listaPretas.pecaPosicao(posX + i - 1, posY + i - 1) != null) {
 					return false;
 				}
 				return true;
@@ -45,7 +48,8 @@ public class Rainha extends Peca {
 			
 			// diagonal esquerda inferior ↙️
 			if (x == posX-i && y == posY+i) {
-				if (Tabuleiro.listaBrancas.pecaPosicao(posX - i + 1, posY + i - 1) != null) {
+				if (Tabuleiro.listaBrancas.pecaPosicao(posX - i + 1, posY + i - 1) != null
+						|| Tabuleiro.listaPretas.pecaPosicao(posX - i + 1, posY + i - 1) != null) {
 					return false;
 				}
 				return true;	
